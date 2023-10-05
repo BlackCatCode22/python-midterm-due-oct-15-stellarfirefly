@@ -1,0 +1,27 @@
+Hyena Habitat:
+
+Hy01; Banzai; 4 years old; birth date 2019-03-21; tan color; female; 70 pounds; from Friguia Park, Tunisia; arrived 2023-09-14
+Hy02; Ed; 11 years old; birth date 2011-09-21; brown color; male; 150 pounds; from Friguia Park, Tunisia; arrived 2023-09-14
+Hy03; Zig; 4 years old; birth date 2019-03-21; black color; male; 120 pounds; from Friguia Park, Tunisia; arrived 2023-09-14
+Hy04; Bud; 8 years old; birth date 2015-01-01; black and tan striped color; female; 105 pounds; from Friguia Park, Tunisia; arrived 2023-09-14
+
+Lion Habitat:
+
+Li01; Mufasa; 6 years old; birth date 2017-03-21; tan color; female; 300 pounds; from Zanzibar, Tanzania; arrived 2023-09-14
+Li02; Simba; 11 years old; birth date 2011-12-21; dark tan color; female; 375 pounds; from KopeLion, Tanzania; arrived 2023-09-14
+Li03; Kiara; 21 years old; birth date 2001-09-21; golden color; male; 450 pounds; from Zanzibar, Tanzania; arrived 2023-09-14
+Li04; King; 4 years old; birth date 2019-03-21; tan and brown color; female; 275 pounds; from KopeLion, Tanzania; arrived 2023-09-14
+
+Tiger Habitat:
+
+Ti01; Tigger; 2 years old; birth date 2021-03-21; gold and tan stripes color; male; 270 pounds; from Dhaka, Bangladesh; arrived 2023-09-14
+Ti02; Amber; 4 years old; birth date 2019-03-21; black stripes color; female; 400 pounds; from Dhaka, Bangladesh; arrived 2023-09-14
+Ti03; Cosimia; 17 years old; birth date 2005-09-21; gold and tan color; male; 300 pounds; from Bardia, Nepal; arrived 2023-09-14
+Ti04; Cuddles; 3 years old; birth date 2020-03-21; black stripes color; female; 285 pounds; from Bardia, Nepal; arrived 2023-09-14
+
+Bear Habitat:
+
+Be01; Smokey; 7 years old; birth date 2016-03-21; brown color; male; 320 pounds; from Alaska Zoo, Alaska; arrived 2023-09-14
+Be02; Paddington; 25 years old; birth date 1998-03-21; black color; female; 425 pounds; from Woodland park Zoo, Washington ; arrived 2023-09-14
+Be03; Lippy; 3 years old; birth date 2019-09-21; black color; female; 355 pounds; from Woodland park Zoo, Washington ; arrived 2023-09-14
+Be04; Bungle; 4 years old; birth date 2019-03-21; brown color; male; 405 pounds; from Alaska Zoo, Alaska; arrived 2023-09-14
