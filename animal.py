@@ -2,6 +2,11 @@ import random
 from datetime import date   # used for creating birthdate
 import calendar             # used for various date functions
 
+#----
+# Animal class that contains all things common to all animals.
+# In this case, a birthday, including a way to generate one and to
+# retrieve it in human-readable format.
+#
 class Animal:
             # dictionary for valid months of a season,
             # this data isn't provided by the calendar module
