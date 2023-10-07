@@ -15,6 +15,7 @@ import habitat
 
 arriving_file = "arrivingAnimals.txt"
 name_file = "animalNames.txt"
+report_file = "animal_report.txt"
 name_pool = namepool.NamePool(name_file)    # prep the pool of names
 
 #---- functions ----
@@ -78,22 +79,48 @@ def process_color(field):
     if info[len(info)-1] != "color":    # last field must be "color"
         raise Exception("Invalid format for color: {}".format(field))
         exit()
-    return field    # for simplicity, will include the word "color"
+    return field.strip()    # for simplicity, will include the word "color"
 
 def process_weight(field):
     info = field.strip().split(" ")
     if info[1] != "pounds":             # must be "<int> pounds"
         raise Exception("Invalid format for weight: {}".format(field))
         exit()
-    return field    # for simplicity, will be string "<int> pounds"
+    return field.strip()    # for simplicity, will be string "<int> pounds"
 
 def process_location(field1, field2):
-    return field1 + "," + field2        # just re-join the two fields
+    return field1.strip() + "," + field2    # just re-join the two fields
+
+    # use the specie to assign to a habitat; create if not yet made
+def genZooHabitat(habitats, specie, new_animal):
+    if not specie in habitats.keys():
+            # make habitat name to human-readable version for outputs
+        habitats[specie] = habitat.Habitat(specie.capitalize()+" Habitat")
+    habitats[specie].add(new_animal)    # add animal to habitat
+
+    # generate a line of the report from an animal object
+def genReportLine(ani):
+    output = []
+    output.append(ani.get_ID())
+    output.append(ani.get_name())
+    output.append(str(ani.get_age()) + " years old")
+    output.append("birth date " + ani.getBirthday())
+    output.append(ani.get_color())
+    output.append(ani.get_gender())
+    output.append(ani.get_weight())
+    output.append(ani.get_source_location())
+    string_out = ""
+    for idx, field in enumerate(output):
+        if idx > 0:
+            string_out += "; "
+        string_out += field
+    return string_out
 
 #---- main ----
 
 habitats = {}   # dictionary of the created habitats, with list of animals
 
+    # read and process the incoming animals file
 try:
     data_file = open(arriving_file, "r")
 except Exception as e:
@@ -102,12 +129,23 @@ except Exception as e:
 line = data_file.readline()
 while line != "":
     (new_animal, specie) = process_arrival(line.strip())
-        # use the specie to assign a habitat; create if not yet made
-    if specie in habitats.keys():
-        habitats[specie].append(new_animal)
-    else:
-        habitats[specie] = [new_animal]
+    genZooHabitat(habitats, specie, new_animal)
     line = data_file.readline()
 data_file.close()
 
-print("DEBUG:", habitats)
+    # write the report to the report file
+try:
+    output_file = open(report_file, "w")
+except Exception as e:
+    print("ERROR Opening Report file:", e)
+    exit()
+for hab in habitats.keys():     # iterate through all habitats
+        # write habitat name
+    output_file.write(habitats[hab].get_name() + ":\n\n")
+    for ani in habitats[hab].get_residents():
+            # write animal information line
+        output_file.write(genReportLine(ani) + "\n")
+    output_file.write("\n")     # assignment has blank lines around headers
+output_file.close()
+print("Done processing incoming animals.")
+
