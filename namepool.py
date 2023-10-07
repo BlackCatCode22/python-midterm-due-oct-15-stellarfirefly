@@ -49,7 +49,8 @@ class NamePool:
     #
     def genAnimalName(self, species):
         if not species in self.name_dict.keys():
-            raise KeyError("Invalid species.")
+            err = "Invalid species: {}".format(species)
+            raise KeyError(err)
         potentials = self.name_dict[species]
         if len(potentials) < 1:
             raise IndexError("Out of names.")
