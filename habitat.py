@@ -49,6 +49,12 @@ class Habitat:
                 population[species] = 1
         return population
 
+    #----
+    # Getter for habitat name.
+    #
+    def get_name(self):
+        return self.name
+
 if __name__ == "__main__":      # to debug the class
     lion = animal.Animal("lion")
     tiger = animal.Animal("tiger")
