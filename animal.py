@@ -87,6 +87,18 @@ class Animal:
     def set_color(self, color):
         self.color = color
 
+    #----
+    # Setter for animal weight.
+    #
+    def set_weight(self, weight):
+        self.weight = weight
+
+    #----
+    # Setter for animal source location.
+    #
+    def set_color(self, loc):
+        self.source_location = loc
+
 if __name__ == "__main__":      # for testing the class
     random.seed()
     creature1 = Animal("bear", "Yogi")  # named bear
