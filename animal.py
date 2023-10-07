@@ -96,7 +96,7 @@ class Animal:
     #----
     # Setter for animal source location.
     #
-    def set_color(self, loc):
+    def set_source_location(self, loc):
         self.source_location = loc
 
 if __name__ == "__main__":      # for testing the class
