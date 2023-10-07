@@ -81,6 +81,12 @@ class Animal:
     def getBirthday(self):
         return self.birthMonthName + " " + str(self.birthDay) + ", " + str(self.birthYear)
 
+    #----
+    # Setter for animal color.
+    #
+    def set_color(self, color):
+        self.color = color
+
 if __name__ == "__main__":      # for testing the class
     random.seed()
     creature1 = Animal("bear", "Yogi")  # named bear
