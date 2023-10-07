@@ -10,14 +10,13 @@ import animal
 # remove animals, sort them, feed them, clean up after them, etc.
 #
 class Habitat:
-    name = "unnamed"
-    animals = []
 
     #----
     # Constructor, must specify a name for the habitat.
     #
     def __init__(self, name):
         self.name = name
+        self.animals = []
 
     #----
     # Add an animal to the habitat.
@@ -54,6 +53,11 @@ class Habitat:
     #
     def get_name(self):
         return self.name
+    #----
+    # Getter for the list of habitat residents.
+    #
+    def get_residents(self):
+        return self.animals
 
 if __name__ == "__main__":      # to debug the class
     lion = animal.Animal("lion")
