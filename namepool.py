@@ -47,7 +47,7 @@ class NamePool:
     # we don't get duplicates. Return the name, or raise exceptions on either
     # out of names or invalid species.
     #
-    def make_name(self, species):
+    def genAnimalName(self, species):
         if not species in self.name_dict.keys():
             raise KeyError("Invalid species.")
         potentials = self.name_dict[species]
@@ -63,9 +63,9 @@ class NamePool:
 if __name__ == "__main__":      # for testing the class
     pool = NamePool("animalNames.txt")
     print(pool.name_dict)
-    print(pool.make_name("lion"))   # make 3 lions and a bear
-    print(pool.make_name("lion"))
-    print(pool.make_name("lion"))
-    print(pool.make_name("bear"))
-    print(pool.make_name("bear"))
+    print(pool.genAnimalName("lion"))   # make 3 lions and a bear
+    print(pool.genAnimalName("lion"))
+    print(pool.genAnimalName("lion"))
+    print(pool.genAnimalName("bear"))
+    print(pool.genAnimalName("bear"))
     print(pool.name_dict)           # final dict should not have those names
