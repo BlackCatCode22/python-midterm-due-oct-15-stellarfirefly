@@ -99,6 +99,12 @@ class Animal:
     def set_source_location(self, loc):
         self.source_location = loc
 
+    #----
+    # Setter for animal gender.
+    #
+    def set_gender(self, gender):
+        self.gender = gender
+
 if __name__ == "__main__":      # for testing the class
     random.seed()
     creature1 = Animal("bear", "Yogi")  # named bear
