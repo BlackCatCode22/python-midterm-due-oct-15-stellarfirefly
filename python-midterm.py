@@ -133,7 +133,8 @@ while line != "":
     line = data_file.readline()
 data_file.close()
 
-    # write the report to the report file
+    # write the report to the report file and to console
+    # (unclear which was required in the assignment, so we'll just do both)
 try:
     output_file = open(report_file, "w")
 except Exception as e:
@@ -141,11 +142,16 @@ except Exception as e:
     exit()
 for hab in habitats.keys():     # iterate through all habitats
         # write habitat name
-    output_file.write(habitats[hab].get_name() + ":\n\n")
+    hab_out = habitats[hab].get_name() + ":\n"
+    output_file.write(hab_out + "\n")
+    print(hab_out)
     for ani in habitats[hab].get_residents():
             # write animal information line
-        output_file.write(genReportLine(ani) + "\n")
+        report_out = genReportLine(ani)
+        output_file.write(report_out + "\n")
+        print(report_out)
     output_file.write("\n")     # assignment has blank lines around headers
+    print()
 output_file.close()
 print("Done processing incoming animals.")
 
