@@ -58,6 +58,7 @@ class Animal:
     # before or after the season in question, etc. We'll keep it simple.
     #
     def genBirthDay(self, age, season):
+        self.age = age
         self.birthYear = self.current_year - age
         if season == "autumn":      # account for autumn == fall
             season = "fall"
@@ -82,28 +83,42 @@ class Animal:
         return self.birthMonthName + " " + str(self.birthDay) + ", " + str(self.birthYear)
 
     #----
-    # Setter for animal color.
+    # Getter for animal's age.
+    #
+    def get_age(self):
+        return self.age
+
+    #----
+    # Setter and getter for animal color.
     #
     def set_color(self, color):
         self.color = color
+    def get_color(self):
+        return self.color
 
     #----
-    # Setter for animal weight.
+    # Setter and getter for animal weight.
     #
     def set_weight(self, weight):
         self.weight = weight
+    def get_weight(self):
+        return self.weight
 
     #----
-    # Setter for animal source location.
+    # Setter and getter for animal source location.
     #
     def set_source_location(self, loc):
         self.source_location = loc
+    def get_source_location(self):
+        return self.source_location
 
     #----
-    # Setter for animal gender.
+    # Setter and getter for animal gender.
     #
     def set_gender(self, gender):
         self.gender = gender
+    def get_gender(self):
+        return self.gender
 
 if __name__ == "__main__":      # for testing the class
     random.seed()
